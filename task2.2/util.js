@@ -23,11 +23,20 @@ function cloneObject(src) {
 }
 
 function uniqArray(arr) {
-    var uniq=[]
+    var uniq=[];
     for(var i in arr){
        if(uniq.indexOf(arr[i])== -1){
-           uniq.push(arr[i])
+           uniq.push(arr[i]);
        }
     }
-    return uniq
+    return uniq;
+}
+function simpleTrim(str) {
+    for(var i in str){
+        if(str.charAt(i)!=''&&str.charAt(i)!='\t'){
+            break
+        }
+        str=str.substring(i,str.length-1)
+    }return str
+
 }
