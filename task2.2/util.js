@@ -21,3 +21,13 @@ function cloneObject(src) {
     }
     return result;
 }
+
+function uniqArray(arr) {
+    var uniq=[]
+    for(var i in arr){
+       if(uniq.indexOf(arr[i])== -1){
+           uniq.push(arr[i])
+       }
+    }
+    return uniq
+}
