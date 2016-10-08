@@ -115,3 +115,31 @@ function getPosition(element) {
         return obj
     }
 }
+function $(selector){
+  if(/^#\w+$/.test(selector)){
+      var arr = selector.split("");
+      arr.shift();
+      var str = arr.join("");
+      return document.getElementById(str)
+  }
+    else if(/^\.\w+$/.test(selector)){
+      var arr = selector.split("");
+      arr.shift();
+      var str = arr.join("");
+      return document.getElementsByClassName(str)
+  }else if(/^\w+$/.test(selector)){
+      return document.getElementsByTagName(selector)
+  }else if(/^\[\w+\]$/.test(selector)){
+      var arr = selector.split("");
+      arr.shift();
+      arr.pop()
+      var str = arr.join("");
+      var attr=document.getElementsByTagName()
+      for(var i= 0;i<attr.length;i++){
+          if(attr[i].attribute[str]){
+              return attr[i]
+          }
+      }
+  }
+
+}
